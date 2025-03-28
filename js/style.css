@@ -12,10 +12,11 @@ body {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 button {
-    padding: 8px 15px;
+    padding: 10px 15px;
     font-size: 16px;
     border: none;
     background-color: #007BFF;
@@ -33,6 +34,7 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
+    padding: 10px;
 }
 
 .month {
@@ -40,11 +42,16 @@ button:hover {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    overflow: hidden;
 }
 
 .month-title {
     font-weight: bold;
     margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .days {
@@ -57,6 +64,9 @@ button:hover {
     padding: 5px;
     background: #ddd;
     border-radius: 3px;
+    text-align: center;
+    font-size: 14px;
+    word-wrap: break-word;
 }
 
 .day-header {
@@ -74,3 +84,15 @@ button:hover {
     border-radius: 5px;
 }
 
+/* Media queries voor responsiviteit */
+@media (max-width: 900px) {
+    .year-calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .year-calendar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
